@@ -1,0 +1,302 @@
+
+<!--DOCTYPE html-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--==Title===========================-->
+    <title>Product Slider HTML</title>
+    <!--==CSS=============================-->
+]<style>
+     *{
+    margin: 0px;
+    padding: 0px;
+    font-family: poppins;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+body{
+    background-color: #f8f8f8;
+}
+/*==Slider==========================*/
+#p_slider{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    width: 90%;
+    min-height: 100vh;
+    margin: auto;
+}
+.product-box{
+    max-width:100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+.product-box-img{
+    width: 300px;
+    height:370px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    position: relative;
+    padding:20px;
+}
+
+.product-box-img img{
+    width:100%;
+    height:100%;
+    object-fit: contain;
+    object-position: center;
+    overflow: visible;
+}
+.product-box-img::before,
+.product-box-img::after{
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 370px;
+    height: 300px;
+    transform: translate(-50%,-50%);
+    top: 10%;
+    left: -10%;
+    border: 2px solid #e7e7e7;
+    border-radius: 50%;
+    z-index: -1;
+    transform: rotate(-50deg);
+    animation-name: rotate2;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;  
+}
+.product-box-img::after{
+    border: 2px solid #1295d1c0;
+    animation-name: rotate;
+}
+
+@keyframes rotate{
+    from{ transform: rotate(-360deg); }
+    to{ transform: rotate(360deg); }
+}
+@keyframes rotate2{
+    from{ transform: rotate(360deg); }
+    to{ transform: rotate(-360deg); }
+}
+.product-box-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.product-box-text a{
+    color: #333333;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+.product-box-text span{
+    color: #535353;
+    font-weight: 600;
+}
+.mySwiper{
+    width: 100%;
+    overflow: hidden;
+}
+.swiper-pagination{
+    position: static !important;
+    margin-top: 70px;
+}
+.swiper-pagination-progressbar-fill{
+    background: #2b2b2b !important;
+}
+.swiper-pagination-progressbar{
+    background: #e2e2e2 !important;
+    height: 3px !important;
+    border-radius: 4px !important;
+}
+@media(max-width:400px){
+    .product-box-img{
+        width: 80%;
+        height: 300px;}
+        .product-box-img::before,
+        .product-box-img::after{
+            width: 90%;
+            height: 300px;
+            top: 0%;
+            left: 5%;}   
+}
+@media(max-width:330px){
+    .product-box-img{
+        width: 80%;
+        height: 250px;}
+        .product-box-img::before,
+        .product-box-img::after{
+            width: 90%;
+            height: 250px;
+            top: 0%;
+            left: 5%;}   
+}
+</style>    <!--==Import Poppins Font=============-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> 
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+    
+</head>
+<body>
+
+    <!--==Product Slider=============================-->
+    <section id="p_slider">
+
+
+        <!-- Swiper -->
+        <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+
+            <!--slide-1-->
+            <div class="swiper-slide">
+            <!--**box********************-->
+            <div class="product-box">
+            <!--img-->
+            <div class="product-box-img">
+                <img alt="1" src="https://i.pinimg.com/564x/71/57/21/715721cef5bcf33a255a0b5480e27d1e.jpg">
+            </div>
+            <!--text-->
+            <div class="product-box-text">
+                <a href="#">
+                    Plants
+                </a>
+                <span>$10.05</span>
+            </div>
+            </div>
+            </div><!--slide-end-->
+
+            <!--slide-2-->
+            <div class="swiper-slide">
+            <!--**box********************-->
+            <div class="product-box">
+            <!--img-->
+            <div class="product-box-img">
+                <img alt="1" src="https://i.pinimg.com/736x/b4/25/3a/b4253a08dd1db162e67c29515feca47a.jpg">
+            </div>
+            <!--text-->
+            <div class="product-box-text">
+                <a href="#">
+                    Plants
+                </a>
+                <span>$10.05</span>
+            </div>
+            </div>
+            </div><!--slide-end-->
+
+            <!--slide-3-->
+            <div class="swiper-slide">
+            <!--**box********************-->
+            <div class="product-box">
+            <!--img-->
+            <div class="product-box-img">
+                <img alt="1" src="https://i.pinimg.com/236x/8f/7c/13/8f7c1335cbed047d5e77a56b7b5377a9.jpg">
+            </div>
+            <!--text-->
+            <div class="product-box-text">
+                <a href="#">
+                    Plants
+                </a>
+                <span>$10.05</span>
+            </div>
+            </div>
+            </div><!--slide-end-->
+
+            <!--slide-4-->
+            <div class="swiper-slide">
+            <!--**box********************-->
+            <div class="product-box">
+            <!--img-->
+            <div class="product-box-img">
+                <img alt="1" src="https://i.pinimg.com/236x/5e/ee/46/5eee46bbd7c36631d6f835c46d2afb03.jpg">
+            </div>
+            <!--text-->
+            <div class="product-box-text">
+                <a href="#">
+                    Plants
+                </a>
+                <span>$10.05</span>
+            </div>
+            </div>
+            </div><!--slide-end-->
+
+            <!--slide-5-->
+            <div class="swiper-slide">
+            <!--**box********************-->
+            <div class="product-box">
+            <!--img-->
+            <div class="product-box-img">
+                <img alt="1" src="https://i.pinimg.com/736x/c3/b2/3e/c3b23e11e9c2b01c790d16db1d3f8440.jpg">
+            </div>
+            <!--text-->
+            <div class="product-box-text">
+                <a href="#">
+                    Plants
+                </a>
+                <span>$10.05</span>
+            </div>
+            </div>
+            </div><!--slide-end-->
+
+        </div>
+        <div class="swiper-pagination"></div>
+        </div>
+
+    </section>
+    
+
+
+    <!-- Swiper JS -->
+  <script src="js/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 1,
+      spaceBetween: 10,
+      pagination: {
+        el: ".swiper-pagination",
+        type: "progressbar",
+      },
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
+          spaceBetween: 50,
+        },
+        810: {
+          slidesPerView: 2,
+          spaceBetween: 40,
+        },
+        1250: {
+          slidesPerView: 3,
+          spaceBetween: 30,
+        },
+      },
+    });
+  </script>
+</body>
+</html>
+  
